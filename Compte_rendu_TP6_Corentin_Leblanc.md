@@ -108,3 +108,16 @@ La commande "dhcp-lease-list" affiche la liste des bails et jusqu'a quand ils so
 ![image](https://user-images.githubusercontent.com/104362418/193056906-5162bc3f-f84d-4d29-aaf3-bc24d394b5c2.png)
 
 Exercice 4. Donner un accès à Internet au client
+
+1 -- J'ai décommenté la ligne "net.ipv4.ip_forward=1" dans le fichier "/etc/sysctl.conf".
+
+![image](https://user-images.githubusercontent.com/104362418/193058516-4bf2ef8f-b038-4f6a-8eb2-29a52d966b7e.png)
+
+![image](https://user-images.githubusercontent.com/104362418/193058585-9cea9e3f-ba0c-40d5-b434-30f0c2be0a6d.png)
+
+![image](https://user-images.githubusercontent.com/104362418/193058647-3f19ea6e-923f-4a5c-81dc-b6e6cff07557.png)
+
+La valeur à donc bien été prise en compte.
+
+2 --
+
