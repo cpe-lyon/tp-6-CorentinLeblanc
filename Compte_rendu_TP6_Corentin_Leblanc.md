@@ -103,3 +103,8 @@ La commande "dhcp-lease-list" affiche la liste des bails et jusqu'a quand ils so
 
 ![image](https://user-images.githubusercontent.com/104362418/193050619-262ac29f-ad01-44e0-972b-0079039a47c7.png)
 
+10 -- Après avoir effectué les modifications demandées sur le serveur, on constate que l'IP de l'interface à bien changé.
+
+![image](https://user-images.githubusercontent.com/104362418/193056906-5162bc3f-f84d-4d29-aaf3-bc24d394b5c2.png)
+
+Exercice 4. Donner un accès à Internet au client
