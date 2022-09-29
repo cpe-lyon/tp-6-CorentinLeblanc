@@ -67,5 +67,14 @@ J'ai ensuite modifié le fichier "dhcpd.conf" comme demandé.
 
 Les deux premières lignes correspondent au temps par défaut du bail et du temps maximal du bail, tout est en seconde.
 
-4 -- 
+4 -- Voici les modifications que j'ai apporté au fichier /etc/default/isc-dhcp-server.
+
+![image](https://user-images.githubusercontent.com/104362418/193037699-38f50db8-a7bd-4e8e-84f6-2b58dbdc3229.png)
+
+5 -- Après avoir validé la configuration de mon fichier grâce à la commande "dhcpd -t" puis avoir redémarrez le serveur DHCP avec le commande "systemctl restart isc-dhcp-server", je constate que mon serveur DHCP est actif.
+
+![image](https://user-images.githubusercontent.com/104362418/193038165-93c41908-c621-4c88-b887-a64acbee3573.png)
+
+
+
 
