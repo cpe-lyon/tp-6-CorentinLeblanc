@@ -26,5 +26,7 @@ Dans les paramètres j'ai modifié l'adaptateur réseau pour le client.
 
 Et pour le serveur je lui ai rajouté un adaptateur réseau(Ils disposent de celui du Labos avec le DHCP et celui de notre LAN ICS_E38).
 
+2 -- En démarrant puis en me connectant sur le serveur je constate que les deux interfaces réseau sont bien présentes. L'interface nommée "lo" correspond au localhost
 
+3 -- 
 
