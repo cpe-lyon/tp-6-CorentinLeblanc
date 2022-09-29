@@ -57,6 +57,15 @@ Au redémarrage, les ips que l'on constate sont les bonnes.
 
 ![image](https://user-images.githubusercontent.com/104362418/193032096-af4a4f74-4d31-4b67-bc8f-3fd613992e87.png)
 
+3 -- J'ai copié le fichier "/etc/dhcp/dhcp.conf" et créé une copie de ce fichier. 
 
+![image](https://user-images.githubusercontent.com/104362418/193033555-4dd9897f-dc31-4a22-949d-c7c933a314ec.png)
 
+J'ai ensuite modifié le fichier "dhcpd.conf" comme demandé.
+
+![image](https://user-images.githubusercontent.com/104362418/193036271-9deb267c-fc09-4faa-b493-b4eafd4364e8.png)
+
+Les deux premières lignes correspondent au temps par défaut du bail et du temps maximal du bail, tout est en seconde.
+
+4 -- 
 
