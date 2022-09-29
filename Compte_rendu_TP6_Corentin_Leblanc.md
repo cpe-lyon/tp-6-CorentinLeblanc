@@ -48,11 +48,14 @@ Exercice 3. Installation du serveur DHCP
 
 Le serveur n'a en effet pas réussi à démarrer car il n'est pas encore configuré.
 
-2 -- J'ai changé de manière permanente l'adresse IP de l'interface réseau du réseau interne dans le fichier "/etc/netplan/50-cloud-init.yaml".
+2 -- J'ai changé de manière permanente l'adresse IP de l'interface réseau du réseau interne dans le fichier "/etc/netplan/50-cloud-init.yaml". Pour mettre une interface up, on peux utiliser "ip link" ou "sudo dhclient -r"
 
 ![image](https://user-images.githubusercontent.com/104362418/193031621-2ece2596-3f61-44ac-8b8e-ec16e7753426.png)
 
 Il a fallu faire attention à bien respecté l'indentation.
+Au redémarrage, les ip que l'on constate sont les bonnes.
+
+![image](https://user-images.githubusercontent.com/104362418/193032096-af4a4f74-4d31-4b67-bc8f-3fd613992e87.png)
 
 
 
