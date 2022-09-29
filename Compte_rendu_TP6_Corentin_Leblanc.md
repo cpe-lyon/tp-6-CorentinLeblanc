@@ -75,6 +75,31 @@ Les deux premières lignes correspondent au temps par défaut du bail et du temp
 
 ![image](https://user-images.githubusercontent.com/104362418/193038165-93c41908-c621-4c88-b887-a64acbee3573.png)
 
+6 -- J'ai fais comme à l'exercice précédent pour désinstaller cloud-init puis j'ai fais la même chose pour modifier le nom de la machine. Il a également fallu que je change l'ancien nom de la machine dans le fichier /etc/hosts pour que la commande "sudo" s'éxecute plus rapidement.
 
+7 -- Voici une capture d'écran d'une partie du fichier "/var/log/syslog":
 
+![image](https://user-images.githubusercontent.com/104362418/193048080-8cd2fea2-15d9-4d15-8d67-b82dcf32841c.png)
+
+DHCPREQUEST correspond à la demande faites par le client pour obtenir une adresse IP.
+
+DHCPACK correspond au message de recéption du serveur vers le client.
+
+DHCPDISCOVER correspond à la découverte des adresses disponibles sur le réseau.
+
+DHCPOFFER correspond à l'étape ou le serveur donne une adresse IP disponible au client.
+
+8 -- Le fichier "/var/lib/dhcp/dhcpd.leases" contient toutes les demandes de bails effectués par les clients.
+
+![image](https://user-images.githubusercontent.com/104362418/193049826-4ddf59c7-608c-436b-b4d5-96a88fc2de91.png)
+
+La commande "dhcp-lease-list" affiche la liste des bails et jusqu'a quand ils sont disponibles.
+
+![image](https://user-images.githubusercontent.com/104362418/193050255-99576b00-3e51-442d-b479-86be3b3d3b0e.png)
+
+9 -- La communication s'effectue bien dans les deux sens.
+
+![image](https://user-images.githubusercontent.com/104362418/193050485-63cef397-c93d-4b5d-8602-2c8eadb5ca7b.png)
+
+![image](https://user-images.githubusercontent.com/104362418/193050619-262ac29f-ad01-44e0-972b-0079039a47c7.png)
 
