@@ -48,7 +48,11 @@ Exercice 3. Installation du serveur DHCP
 
 Le serveur n'a en effet pas réussi à démarrer car il n'est pas encore configuré.
 
-2 -- 
+2 -- J'ai changé de manière permanente l'adresse IP de l'interface réseau du réseau interne dans le fichier "/etc/netplan/50-cloud-init.yaml".
+
+![image](https://user-images.githubusercontent.com/104362418/193031621-2ece2596-3f61-44ac-8b8e-ec16e7753426.png)
+
+Il a fallu faire attention à bien respecté l'indentation.
 
 
 
