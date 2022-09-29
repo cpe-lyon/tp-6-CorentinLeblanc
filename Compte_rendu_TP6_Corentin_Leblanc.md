@@ -44,3 +44,5 @@ Pour le réseau à 25 machines:
 172.16.1.129/26| Adresse réseau 172.16.1.128
 
 172.16.1.158/26| Adresse broadcast 172.16.1.159
+
+Exercices 2. Préparation de l'environnement
