@@ -53,7 +53,7 @@ Le serveur n'a en effet pas réussi à démarrer car il n'est pas encore configu
 ![image](https://user-images.githubusercontent.com/104362418/193031621-2ece2596-3f61-44ac-8b8e-ec16e7753426.png)
 
 Il a fallu faire attention à bien respecté l'indentation.
-Au redémarrage, les ip que l'on constate sont les bonnes.
+Au redémarrage, les ips que l'on constate sont les bonnes.
 
 ![image](https://user-images.githubusercontent.com/104362418/193032096-af4a4f74-4d31-4b67-bc8f-3fd613992e87.png)
 
