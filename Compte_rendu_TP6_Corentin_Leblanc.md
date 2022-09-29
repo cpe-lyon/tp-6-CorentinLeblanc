@@ -28,5 +28,28 @@ Et pour le serveur je lui ai rajouté un adaptateur réseau(Ils disposent de cel
 
 2 -- En démarrant puis en me connectant sur le serveur je constate que les deux interfaces réseau sont bien présentes. L'interface nommée "lo" correspond au localhost
 
-3 -- 
+3 -- J'ai désinstallé complétement ce paquet grâce à la commande "sudo apt autoremove cloud-init".
+
+![image](https://user-images.githubusercontent.com/104362418/193023039-5aa6ff6b-e36e-44f9-a152-c3fbcc75d686.png)
+
+Après redémarrage du serveur, le package est bien supprimé.
+
+![image](https://user-images.githubusercontent.com/104362418/193023517-c8f61023-d01a-447e-8b7d-eb3d93e6a6b8.png)
+
+4 -- J'ai changé le nom du serveur comme demandé. J'ai pu l'affiché derrière avec la commande "hostnamectl".
+
+![image](https://user-images.githubusercontent.com/104362418/193024741-f89aa36d-91f4-4877-adcf-88bff329097f.png)
+
+Exercice 3. Installation du serveur DHCP
+
+1 -- L'installation du paquet isc-dhcp-server s'est faite avec la commande "sudo apt install isc-dhcp-server".
+
+![image](https://user-images.githubusercontent.com/104362418/193025455-8ed6803b-e520-4742-8008-4749b77214dd.png)
+
+Le serveur n'a en effet pas réussi à démarrer car il n'est pas encore configuré.
+
+2 -- 
+
+
+
 
