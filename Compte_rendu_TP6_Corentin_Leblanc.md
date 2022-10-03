@@ -171,3 +171,15 @@ J'ai rentré l'adresse IP du serveur à l'envers car c'est un fichier de configu
 
 ![image](https://user-images.githubusercontent.com/104362418/193540381-6b5713f1-9639-4120-b646-5f3fdf0d975c.png)
 
+5 -- Après redémmarage du serveur bind9 les deux ping fonctionnent bien.
+
+Le ping du client vers le serveur :
+
+![image](https://user-images.githubusercontent.com/104362418/193544652-f3ea5ccb-62aa-4900-afa6-1642fa3562b4.png)
+
+Le ping du serveur vers le client ne marche pas. Comme solution, j'ai trouvé une méthode pour forcer le fichier resolv.conf à prendre en compte une nouvelle ligne.
+
+![image](https://user-images.githubusercontent.com/104362418/193547053-a623d0d4-6bdb-4deb-a182-aee096e88cdf.png)
+
+![image](https://user-images.githubusercontent.com/104362418/193547150-f2b13c71-5f34-4ea9-8cab-17dcfb1e9561.png)
+
