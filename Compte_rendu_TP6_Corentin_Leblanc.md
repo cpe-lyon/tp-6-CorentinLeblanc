@@ -119,5 +119,55 @@ Exercice 4. Donner un accès à Internet au client
 
 La valeur à donc bien été prise en compte.
 
-2 -- 
+2 -- J'ai donc autorisé la traduction d'adresse source en ajoutant la règle iptables
+
+![image](https://user-images.githubusercontent.com/104362418/193526559-fa3e20dc-b9be-493f-a400-ab4caf8aef3b.png)
+
+Les pings sur 8.8.8.8 et sur 1.1.1.1 fonctionnent donc bien sur le serveur.
+
+![image](https://user-images.githubusercontent.com/104362418/193526733-be0fe349-7bd9-45c5-9e99-8dade325d30a.png)
+
+Exercice 5. Installation du serveur DNS
+
+1 -- J'ai installé le programmer "bind9" et je me suis assurée que le service est bien actif.
+
+![image](https://user-images.githubusercontent.com/104362418/193530632-5076efe1-adf6-4cc8-acd9-ef2edeb6efb0.png)
+
+2 -- J'ai donc fais un "sudo nano /etc/bind/name.conf.options", j'ai décommenté la partie forwarders et remplacé les DNS.
+
+![image](https://user-images.githubusercontent.com/104362418/193531339-b9760df5-64b4-41d1-ab70-bcf3f73f7954.png)
+
+J'ai ensuite redémarré le serveur bind9.
+
+![image](https://user-images.githubusercontent.com/104362418/193531910-c87a50d2-4e11-4487-b038-f4dd8c65e1c9.png)
+
+3 -- Le ping sur "www.google.fr" fonctionne.
+
+![image](https://user-images.githubusercontent.com/104362418/193533016-ef0d0f73-dc4b-449e-b344-89de6f80f4ee.png)
+
+4 -- La commande pour surfer sur le site est "lynx fr.wikipedia.fr".
+
+![image](https://user-images.githubusercontent.com/104362418/193534215-e422e26b-7aa3-444b-ab3c-9129fca4f576.png)
+
+Exercice 6. Configuration du serveur DNS pour la zone tpadmin.local
+
+1 -- J'ai ajouté les lignes demandés au fichier suivant "/etc/bin/db.tpadmin.local"
+
+![image](https://user-images.githubusercontent.com/104362418/193535382-140dc08e-a2d2-4c75-9a02-daec844f95e5.png)
+
+2 -- J'ai d'abord copié le fichier "db.local" et renommé la copie "db.tpadmin.local", j'ai remplacé tout les localhost par tpadmin.local puis l'adresse 127.0.0.1 par l'adresse IP du serveur.
+
+![image](https://user-images.githubusercontent.com/104362418/193537151-5272bbe7-bdf6-4196-af01-4f9f6c5220b1.png)
+
+3 -- J'ai ajouté les lignes demandés au fichier "named.conf.local"
+
+![image](https://user-images.githubusercontent.com/104362418/193537626-4e9e68c5-51f4-4659-9f5e-559e11998572.png)
+
+![image](https://user-images.githubusercontent.com/104362418/193539655-6309ee03-3604-4ead-ac09-4bcae089849e.png)
+
+J'ai rentré l'adresse IP du serveur à l'envers car c'est un fichier de configuration de zone inverse.
+
+4 -- Mes fichiers de configuration ont bien été validée
+
+![image](https://user-images.githubusercontent.com/104362418/193540381-6b5713f1-9639-4120-b646-5f3fdf0d975c.png)
 
