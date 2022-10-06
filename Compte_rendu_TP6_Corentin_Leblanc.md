@@ -1,6 +1,6 @@
 **Compte rendu TP 6 --Gestion du réseau**
 
-Exercice 1. Adressage IP
+**<ins>Exercice 1. Adressage IP</ins>**
 
 Nous avons utilisé du VLSM. Voici les sous-réseaux:
 
@@ -14,7 +14,7 @@ Nous avons utilisé du VLSM. Voici les sous-réseaux:
 | Host6 | 33           | 62              | 29           | 172.16.1.64     | /26   | 255.255.255.192 | 172.16.1.65 - 172.16.1.126  | 172.16.1.127 |
 | Host7 | 25           | 30              | 5            | 172.16.1.128    | /27   | 255.255.255.224 | 172.16.1.129 - 172.16.1.158 | 172.16.1.159 |
 
-Exercices 2. Préparation de l'environnement
+**<ins>Exercices 2. Préparation de l'environnement</ins>**
 
 1 -- J'ai commencé par rajouter les interfaces réseaux sur mes deux machines virtuelles.
 
@@ -26,9 +26,9 @@ Dans les paramètres j'ai modifié l'adaptateur réseau pour le client.
 
 Et pour le serveur je lui ai rajouté un adaptateur réseau(Ils disposent de celui du Labos avec le DHCP et celui de notre LAN ICS_E38).
 
-2 -- En démarrant puis en me connectant sur le serveur je constate que les deux interfaces réseau sont bien présentes. L'interface nommée "lo" correspond au localhost
+2 -- En démarrant puis en me connectant sur le serveur je constate que les deux interfaces réseau sont bien présentes. L'interface nommée **"lo"** correspond au localhost
 
-3 -- J'ai désinstallé complétement ce paquet grâce à la commande "sudo apt autoremove cloud-init".
+3 -- J'ai désinstallé complétement ce paquet grâce à la commande **"sudo apt autoremove cloud-init"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193023039-5aa6ff6b-e36e-44f9-a152-c3fbcc75d686.png)
 
@@ -36,19 +36,19 @@ Après redémarrage du serveur, le package est bien supprimé.
 
 ![image](https://user-images.githubusercontent.com/104362418/193023517-c8f61023-d01a-447e-8b7d-eb3d93e6a6b8.png)
 
-4 -- J'ai changé le nom du serveur comme demandé. J'ai pu l'affiché derrière avec la commande "hostnamectl".
+4 -- J'ai changé le nom du serveur comme demandé. J'ai pu l'affiché derrière avec la commande **"hostnamectl"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193024741-f89aa36d-91f4-4877-adcf-88bff329097f.png)
 
-Exercice 3. Installation du serveur DHCP
+**<ins>Exercice 3. Installation du serveur DHCP</ins>**
 
-1 -- L'installation du paquet isc-dhcp-server s'est faite avec la commande "sudo apt install isc-dhcp-server".
+1 -- L'installation du paquet isc-dhcp-server s'est faite avec la commande **"sudo apt install isc-dhcp-server"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193025455-8ed6803b-e520-4742-8008-4749b77214dd.png)
 
 Le serveur n'a en effet pas réussi à démarrer car il n'est pas encore configuré.
 
-2 -- J'ai changé de manière permanente l'adresse IP de l'interface réseau du réseau interne dans le fichier "/etc/netplan/50-cloud-init.yaml". Pour mettre une interface up, on peux utiliser "ip link" ou "sudo dhclient -r"
+2 -- J'ai changé de manière permanente l'adresse IP de l'interface réseau du réseau interne dans le fichier **"/etc/netplan/50-cloud-init.yaml"**. Pour mettre une interface up, on peux utiliser **"ip link"** ou **"sudo dhclient -r"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193031621-2ece2596-3f61-44ac-8b8e-ec16e7753426.png)
 
@@ -57,27 +57,27 @@ Au redémarrage, les ips que l'on constate sont les bonnes.
 
 ![image](https://user-images.githubusercontent.com/104362418/193032096-af4a4f74-4d31-4b67-bc8f-3fd613992e87.png)
 
-3 -- J'ai copié le fichier "/etc/dhcp/dhcp.conf" et créé une copie de ce fichier. 
+3 -- J'ai copié le fichier **"/etc/dhcp/dhcp.conf"** et créé une copie de ce fichier. 
 
 ![image](https://user-images.githubusercontent.com/104362418/193033555-4dd9897f-dc31-4a22-949d-c7c933a314ec.png)
 
-J'ai ensuite modifié le fichier "dhcpd.conf" comme demandé.
+J'ai ensuite modifié le fichier **"dhcpd.conf"** comme demandé.
 
 ![image](https://user-images.githubusercontent.com/104362418/193036271-9deb267c-fc09-4faa-b493-b4eafd4364e8.png)
 
 Les deux premières lignes correspondent au temps par défaut du bail et du temps maximal du bail, tout est en seconde.
 
-4 -- Voici les modifications que j'ai apporté au fichier /etc/default/isc-dhcp-server.
+4 -- Voici les modifications que j'ai apporté au fichier **"/etc/default/isc-dhcp-server"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193037699-38f50db8-a7bd-4e8e-84f6-2b58dbdc3229.png)
 
-5 -- Après avoir validé la configuration de mon fichier grâce à la commande "dhcpd -t" puis avoir redémarrez le serveur DHCP avec le commande "systemctl restart isc-dhcp-server", je constate que mon serveur DHCP est actif.
+5 -- Après avoir validé la configuration de mon fichier grâce à la commande "dhcpd -t" puis avoir redémarrez le serveur DHCP avec le commande **"systemctl restart isc-dhcp-server"**, je constate que mon serveur DHCP est actif.
 
 ![image](https://user-images.githubusercontent.com/104362418/193038165-93c41908-c621-4c88-b887-a64acbee3573.png)
 
-6 -- J'ai fais comme à l'exercice précédent pour désinstaller cloud-init puis j'ai fais la même chose pour modifier le nom de la machine. Il a également fallu que je change l'ancien nom de la machine dans le fichier /etc/hosts pour que la commande "sudo" s'éxecute plus rapidement.
+6 -- J'ai fais comme à l'exercice précédent pour désinstaller cloud-init puis j'ai fais la même chose pour modifier le nom de la machine. Il a également fallu que je change l'ancien nom de la machine dans le fichier /etc/hosts pour que la commande **"sudo"** s'éxecute plus rapidement.
 
-7 -- Voici une capture d'écran d'une partie du fichier "/var/log/syslog":
+7 -- Voici une capture d'écran d'une partie du fichier **"/var/log/syslog"**:
 
 ![image](https://user-images.githubusercontent.com/104362418/193048080-8cd2fea2-15d9-4d15-8d67-b82dcf32841c.png)
 
@@ -89,11 +89,11 @@ DHCPDISCOVER correspond à la découverte des adresses disponibles sur le résea
 
 DHCPOFFER correspond à l'étape ou le serveur donne une adresse IP disponible au client.
 
-8 -- Le fichier "/var/lib/dhcp/dhcpd.leases" contient toutes les demandes de bails effectués par les clients.
+8 -- Le fichier **"/var/lib/dhcp/dhcpd.leases"** contient toutes les demandes de bails effectués par les clients.
 
 ![image](https://user-images.githubusercontent.com/104362418/193049826-4ddf59c7-608c-436b-b4d5-96a88fc2de91.png)
 
-La commande "dhcp-lease-list" affiche la liste des bails et jusqu'a quand ils sont disponibles.
+La commande **"dhcp-lease-list"** affiche la liste des bails et jusqu'a quand ils sont disponibles.
 
 ![image](https://user-images.githubusercontent.com/104362418/193050255-99576b00-3e51-442d-b479-86be3b3d3b0e.png)
 
@@ -109,7 +109,7 @@ La commande "dhcp-lease-list" affiche la liste des bails et jusqu'a quand ils so
 
 Exercice 4. Donner un accès à Internet au client
 
-1 -- J'ai décommenté la ligne "net.ipv4.ip_forward=1" dans le fichier "/etc/sysctl.conf".
+1 -- J'ai décommenté la ligne **"net.ipv4.ip_forward=1"** dans le fichier **"/etc/sysctl.conf"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193058516-4bf2ef8f-b038-4f6a-8eb2-29a52d966b7e.png)
 
@@ -129,11 +129,11 @@ Les pings sur 8.8.8.8 et sur 1.1.1.1 fonctionnent donc bien sur le serveur.
 
 Exercice 5. Installation du serveur DNS
 
-1 -- J'ai installé le programmer "bind9" et je me suis assurée que le service est bien actif.
+1 -- J'ai installé le programmer **"bind9"** et je me suis assurée que le service est bien actif.
 
 ![image](https://user-images.githubusercontent.com/104362418/193530632-5076efe1-adf6-4cc8-acd9-ef2edeb6efb0.png)
 
-2 -- J'ai donc fais un "sudo nano /etc/bind/name.conf.options", j'ai décommenté la partie forwarders et remplacé les DNS.
+2 -- J'ai donc fais un **"sudo nano /etc/bind/name.conf.options"**, j'ai décommenté la partie forwarders et remplacé les DNS.
 
 ![image](https://user-images.githubusercontent.com/104362418/193531339-b9760df5-64b4-41d1-ab70-bcf3f73f7954.png)
 
@@ -145,21 +145,21 @@ J'ai ensuite redémarré le serveur bind9.
 
 ![image](https://user-images.githubusercontent.com/104362418/193533016-ef0d0f73-dc4b-449e-b344-89de6f80f4ee.png)
 
-4 -- La commande pour surfer sur le site est "lynx fr.wikipedia.fr".
+4 -- La commande pour surfer sur le site est **"lynx fr.wikipedia.fr"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193534215-e422e26b-7aa3-444b-ab3c-9129fca4f576.png)
 
 Exercice 6. Configuration du serveur DNS pour la zone tpadmin.local
 
-1 -- J'ai ajouté les lignes demandés au fichier suivant "/etc/bin/db.tpadmin.local"
+1 -- J'ai ajouté les lignes demandés au fichier suivant **"/etc/bin/db.tpadmin.local"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193535382-140dc08e-a2d2-4c75-9a02-daec844f95e5.png)
 
-2 -- J'ai d'abord copié le fichier "db.local" et renommé la copie "db.tpadmin.local", j'ai remplacé tout les localhost par tpadmin.local puis l'adresse 127.0.0.1 par l'adresse IP du serveur.
+2 -- J'ai d'abord copié le fichier "db.local" et renommé la copie **"db.tpadmin.local"**, j'ai remplacé tout les localhost par tpadmin.local puis l'adresse 127.0.0.1 par l'adresse IP du serveur.
 
 ![image](https://user-images.githubusercontent.com/104362418/193537151-5272bbe7-bdf6-4196-af01-4f9f6c5220b1.png)
 
-3 -- J'ai ajouté les lignes demandés au fichier "named.conf.local"
+3 -- J'ai ajouté les lignes demandés au fichier **"named.conf.local"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193537626-4e9e68c5-51f4-4659-9f5e-559e11998572.png)
 
