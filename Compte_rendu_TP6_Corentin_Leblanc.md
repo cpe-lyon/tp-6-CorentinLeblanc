@@ -26,7 +26,7 @@ Dans les paramètres j'ai modifié l'adaptateur réseau pour le client.
 
 Et pour le serveur je lui ai rajouté un adaptateur réseau(Ils disposent de celui du Labos avec le DHCP et celui de notre LAN ICS_E38).
 
-2 -- En démarrant puis en me connectant sur le serveur je constate que les deux interfaces réseau sont bien présentes. L'interface nommée **"lo"** correspond au localhost
+2 -- En démarrant puis en me connectant sur le serveur je constate que les deux interfaces réseau sont bien présentes. L'interface nommée **"lo"** correspond au localhost ou de loopback qui correspond à la machine elle-même.
 
 3 -- J'ai désinstallé complétement ce paquet grâce à la commande **"sudo apt autoremove cloud-init"**.
 
@@ -36,9 +36,15 @@ Après redémarrage du serveur, le package est bien supprimé.
 
 ![image](https://user-images.githubusercontent.com/104362418/193023517-c8f61023-d01a-447e-8b7d-eb3d93e6a6b8.png)
 
+J'aurais également pu utiliser la commande "**apt remove cloud-init && apt autoremove**", puis "**apt purge cloud-init**"
+et enfin "**rm -rf /etc/cloud**" pour supprimer tout le dossier.
+
 4 -- J'ai changé le nom du serveur comme demandé. J'ai pu l'affiché derrière avec la commande **"hostnamectl"**.
 
 ![image](https://user-images.githubusercontent.com/104362418/193024741-f89aa36d-91f4-4877-adcf-88bff329097f.png)
+
+J'aurais aussi pu modifier le fichier "**/etc/hostname**" de la machine et indiquer dans le fichier "**/etc/hosts**" le nom
+de la machine associé.
 
 **<ins>Exercice 3. Installation du serveur DHCP</ins>**
 
@@ -56,6 +62,10 @@ Il a fallu faire attention à bien respecté l'indentation.
 Au redémarrage, les ips que l'on constate sont les bonnes.
 
 ![image](https://user-images.githubusercontent.com/104362418/193032096-af4a4f74-4d31-4b67-bc8f-3fd613992e87.png)
+
+J'aurais également pu créer un nouveau fichier dans "**/etc/netplan/99-netcfg.yaml**" pour éviter de le 
+surcharger par un autre fichier. Faire attention ne pas mettre de TAB uniquement des espaces. On fait 
+"**sudo netplan try**" puis "**ip a**".
 
 3 -- J'ai copié le fichier **"/etc/dhcp/dhcp.conf"** et créé une copie de ce fichier. 
 
